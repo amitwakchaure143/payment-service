@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:h2:mem:payment;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    # Must match the swagger-ui webjar version overridden in pom.xml
+    version: 5.33.1
+
+acquirer:
+  base-url: http://localhost:8080/mock-acquirer
